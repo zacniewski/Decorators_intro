@@ -19,7 +19,7 @@ def makeitalic(fn):
 def say():
     return "hello"
 
-print say()
+print(say())
 #outputs: <b><i>hello</i></b>
 
 # This is the exact equivalent to
@@ -27,5 +27,5 @@ def say():
     return "hello"
 say = makebold(makeitalic(say))
 
-print say()
+print(say())
 #outputs: <b><i>hello</i></b>

@@ -13,9 +13,9 @@ def benchmark(func):
     """
     import time
     def wrapper(*args, **kwargs):
-        t = time.clock()
+        t = time.perf_counter()
         res = func(*args, **kwargs)
-        print func.__name__, time.clock()-t
+        print(func.__name__, time.perf_counter()-t)
         return res
     return wrapper
 
@@ -27,7 +27,7 @@ def logging(func):
     """
     def wrapper(*args, **kwargs):
         res = func(*args, **kwargs)
-        print func.__name__, args, kwargs
+        print(func.__name__, args, kwargs)
         return res
     return wrapper
 
@@ -39,7 +39,7 @@ def counter(func):
     def wrapper(*args, **kwargs):
         wrapper.count = wrapper.count + 1
         res = func(*args, **kwargs)
-        print "{0} has been used: {1}x".format(func.__name__, wrapper.count)
+        print("{0} has been used: {1}x".format(func.__name__, wrapper.count))
         return res
     wrapper.count = 0
     return wrapper
@@ -48,10 +48,10 @@ def counter(func):
 @benchmark
 @logging
 def reverse_string(string):
-    return str(reversed(string))
+    return string[::-1]
 
-print reverse_string("Able was I ere I saw Elba")
-print reverse_string("A man, a plan, a canoe, pasta, heros, rajahs, a coloratura, maps, snipe, percale, macaroni, a gag, a banana bag, a tan, a tag, a banana bag again (or a camel), a crepe, pins, Spam, a rut, a Rolo, cash, a jar, sore hats, a peon, a canal: Panama!")
+print(reverse_string("Able was I ere I saw Elba"))
+print(reverse_string("A man, a plan, a canoe, pasta, heros, rajahs, a coloratura, maps, snipe, percale, macaroni, a gag, a banana bag, a tan, a tag, a banana bag again (or a camel), a crepe, pins, Spam, a rut, a Rolo, cash, a jar, sore hats, a peon, a canal: Panama!"))
 
 #outputs:
 #reverse_string ('Able was I ere I saw Elba',) {}
@@ -72,17 +72,19 @@ print reverse_string("A man, a plan, a canoe, pasta, heros, rajahs, a coloratura
 @benchmark
 @logging
 def get_random_futurama_quote():
-    from urllib import urlopen
-    result = urlopen("http://subfusion.net/cgi-bin/quote.pl?quote=futurama").read()
+    from urllib.request import urlopen, Request
+    url = "http://subfusion.net/cgi-bin/quote.pl?quote=futurama"
     try:
+        req = Request(url, headers={'User-Agent': 'Mozilla/5.0'})
+        result = urlopen(req).read().decode('utf-8')
         value = result.split("<br><b><hr><br>")[1].split("<br><br><hr>")[0]
         return value.strip()
-    except:
+    except Exception:
         return "No, I'm ... doesn't!"
 
 
-print get_random_futurama_quote()
-print get_random_futurama_quote()
+print(get_random_futurama_quote())
+print(get_random_futurama_quote())
 
 #outputs:
 #get_random_futurama_quote () {}

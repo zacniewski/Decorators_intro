@@ -13,23 +13,23 @@ module and docstring of any wrapped function to it's wrapper. Fun fact, functool
 
 # For debugging, the stacktrace prints you the function __name__
 def foo():
-    print "foo"
+    print("foo")
 
-print foo.__name__
+print(foo.__name__)
 #outputs: foo
 
 # With a decorator, it gets messy
 def bar(func):
     def wrapper():
-        print "bar"
+        print("bar")
         return func()
     return wrapper
 
 @bar
 def foo():
-    print "foo"
+    print("foo")
 
-print foo.__name__
+print(foo.__name__)
 #outputs: wrapper
 
 # "functools" can help for that
@@ -41,13 +41,13 @@ def bar(func):
     # and the magic begins
     @functools.wraps(func)
     def wrapper():
-        print "bar"
+        print("bar")
         return func()
     return wrapper
 
 @bar
 def foo():
-    print "foo"
+    print("foo")
 
-print foo.__name__
+print(foo.__name__)
 #outputs: foo

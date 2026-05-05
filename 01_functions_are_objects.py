@@ -1,7 +1,7 @@
 def shout(word="yes"):
     return word.capitalize()+"!"
 
-print shout()
+print(shout())
 # outputs : 'Yes!'
 
 # As an object, you can assign the function to a variable like any
@@ -13,7 +13,7 @@ scream = shout
 # putting the function "shout" into the variable "scream".
 # It means you can then call "shout" from "scream":
 
-print scream()
+print(scream())
 # outputs : 'Yes!'
 
 # More than that, it means you can remove the old name 'shout', and
@@ -21,10 +21,10 @@ print scream()
 
 del shout
 try:
-    print shout()
-except NameError, e:
-    print e
+    print(shout())
+except NameError as e:
+    print(e)
     #outputs: "name 'shout' is not defined"
 
-print scream()
+print(scream())
 # outputs: 'Yes!'

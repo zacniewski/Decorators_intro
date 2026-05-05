@@ -2,7 +2,7 @@
 
 @my_shiny_new_decorator
 def another_stand_alone_function():
-    print "Leave me alone"
+    print("Leave me alone")
 
 another_stand_alone_function()
 #outputs:
@@ -21,22 +21,22 @@ Of course, you can cumulate decorators:"""
 
 def bread(func):
     def wrapper():
-        print "</''''''\>"
+        print("</''''''\>")
         func()
-        print "<\______/>"
+        print("<\______/>")
     return wrapper
 
 
 def ingredients(func):
     def wrapper():
-        print "#tomatoes#"
+        print("#tomatoes#")
         func()
-        print "~salad~"
+        print("~salad~")
     return wrapper
 
 
 def sandwich(food="--ham--"):
-    print food
+    print(food)
 
 sandwich()
 #outputs: --ham--
@@ -54,7 +54,7 @@ sandwich()
 @bread
 @ingredients
 def sandwich(food="--ham--"):
-    print food
+    print(food)
 
 sandwich()
 #outputs:
@@ -69,7 +69,7 @@ sandwich()
 @ingredients
 @bread
 def strange_sandwich(food="--ham--"):
-    print food
+    print(food)
 
 strange_sandwich()
 #outputs:

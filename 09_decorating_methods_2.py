@@ -5,9 +5,9 @@ no matter its arguments, then just use *args, **kwargs:
 def a_decorator_passing_arbitrary_arguments(function_to_decorate):
     # The wrapper accepts any arguments
     def a_wrapper_accepting_arbitrary_arguments(*args, **kwargs):
-        print "Do I have args?:"
-        print args
-        print kwargs
+        print("Do I have args?:")
+        print(args)
+        print(kwargs)
         # Then you unpack the arguments, here *args, **kwargs
         # If you are not familiar with unpacking, check:
         # http://www.saltycrane.com/blog/2008/01/how-to-use-args-and-kwargs-in-python/
@@ -16,7 +16,7 @@ def a_decorator_passing_arbitrary_arguments(function_to_decorate):
 
 @a_decorator_passing_arbitrary_arguments
 def function_with_no_argument():
-    print "Python is cool, no argument here."
+    print("Python is cool, no argument here.")
 
 function_with_no_argument()
 #outputs
@@ -27,7 +27,7 @@ function_with_no_argument()
 
 @a_decorator_passing_arbitrary_arguments
 def function_with_arguments(a, b, c):
-    print a, b, c
+    print(a, b, c)
 
 function_with_arguments(1,2,3)
 #outputs
@@ -38,8 +38,7 @@ function_with_arguments(1,2,3)
 
 @a_decorator_passing_arbitrary_arguments
 def function_with_named_arguments(a, b, c, platypus="Why not ?"):
-    print "Do %s, %s and %s like platypus? %s" %\
-    (a, b, c, platypus)
+    print("Do %s, %s and %s like platypus? %s" % (a, b, c, platypus))
 
 function_with_named_arguments("Bill", "Linus", "Steve", platypus="Indeed!")
 #outputs
@@ -55,7 +54,7 @@ class Mary(object):
 
     @a_decorator_passing_arbitrary_arguments
     def sayYourAge(self, lie=-3): # You can now add a default value
-        print "I am %s, what did you think ?" % (self.age + lie)
+        print("I am %s, what did you think ?" % (self.age + lie))
 
 m = Mary()
 m.sayYourAge()

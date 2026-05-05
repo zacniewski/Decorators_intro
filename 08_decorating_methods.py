@@ -18,7 +18,7 @@ class Lucy(object):
 
     @method_friendly_decorator
     def sayYourAge(self, lie):
-        print "I am %s, what did you think?" % (self.age + lie)
+        print("I am %s, what did you think?" % (self.age + lie))
 
 l = Lucy()
 l.sayYourAge(-3)

@@ -6,7 +6,7 @@ def talk():
 
     # ... and use it right away!
 
-    print whisper()
+    print(whisper())
 
 # You call "talk", that defines "whisper" EVERY TIME you call it, then
 # "whisper" is called in "talk".
@@ -17,7 +17,7 @@ talk()
 # But "whisper" DOES NOT EXIST outside "talk":
 
 try:
-    print whisper()
-except NameError, e:
-    print e
+    print(whisper())
+except NameError as e:
+    print(e)
     #outputs : "name 'whisper' is not defined"*

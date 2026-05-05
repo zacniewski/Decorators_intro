@@ -6,16 +6,16 @@ Before rushing to the solution, let's write a little reminder:
 
 # Decorators are ORDINARY functions
 def my_decorator(func):
-    print "I am a ordinary function"
+    print("I am a ordinary function")
     def wrapper():
-        print "I am function returned by the decorator"
+        print("I am function returned by the decorator")
         func()
     return wrapper
 
 # Therefore, you can call it without any "@"
 
 def lazy_function():
-    print "zzzzzzzz"
+    print("zzzzzzzz")
 
 decorated_function = my_decorator(lazy_function)
 #outputs: I am a ordinary function
@@ -25,6 +25,6 @@ decorated_function = my_decorator(lazy_function)
 
 @my_decorator
 def lazy_function():
-    print "zzzzzzzz"
+    print("zzzzzzzz")
 
 #outputs: I am a ordinary function

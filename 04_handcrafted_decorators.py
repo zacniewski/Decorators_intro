@@ -8,14 +8,14 @@ def my_shiny_new_decorator(a_function_to_decorate):
 
         # Put here the code you want to be executed BEFORE the original
         # function is called
-        print "Before the function runs"
+        print("Before the function runs")
 
         # Call the function here (using parentheses)
         a_function_to_decorate()
 
         # Put here the code you want to be executed AFTER the original
         # function is called
-        print "After the function runs"
+        print("After the function runs")
 
     # At this point, "a_function_to_decorate" HAS NEVER BEEN EXECUTED.
     # We return the wrapper function we have just created.
@@ -25,7 +25,7 @@ def my_shiny_new_decorator(a_function_to_decorate):
 
 # Now imagine you create a function you don't want to ever touch again.
 def a_stand_alone_function():
-    print "I am a stand alone function, don't you dare modify me"
+    print("I am a stand alone function, don't you dare modify me")
 
 a_stand_alone_function()
 #outputs: I am a stand alone function, don't you dare modify me

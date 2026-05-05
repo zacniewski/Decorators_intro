@@ -21,24 +21,24 @@ def getTalk(kind="shout"):
 talk = getTalk()
 
 # You can see that "talk" is here a function object:
-print talk
+print(talk)
 #outputs : <function shout at 0xb7ea817c>
 
 # The object is the one returned by the function:
-print talk()
+print(talk())
 #outputs : Yes!
 
 # And you can even use it directly if you feel wild:
-print getTalk("whisper")()
+print(getTalk("whisper")())
 #outputs : yes...
 
 
 #If you can return a function, then you can pass one as a parameter:
 def doSomethingBefore(func):
-    print "I do something before then I call the function you gave me"
-    print func()
+    print("I do something before then I call the function you gave me")
+    print(func())
 
-doSomethingBefore(scream)
+doSomethingBefore(talk)
 #outputs:
 #I do something before then I call the function you gave me
 #Yes!
