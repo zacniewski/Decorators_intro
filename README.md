@@ -24,7 +24,9 @@ Python decorators are a powerful and elegant way to modify or extend the behavio
 ---
 
 ## 📝 Original Inspiration
-This tutorial was inspired by an excellent [StackOverflow answer](http://stackoverflow.com/questions/739654/how-can-i-make-a-chain-of-function-decorators-in-python).
+This tutorial was inspired by an excellent [StackOverflow answer](http://stackoverflow.com/questions/739654/how-can-i-make-a-chain-of-function-decorators-in-python).   
+
+---
 
 ## 🛠️ How it Works
 
